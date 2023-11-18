@@ -30,6 +30,8 @@ if ss.button_clicked:
     
     time.sleep(2)
     #st.rerun()
-    
-    sys.argv = ["streamlit", "run", sys.argv[0]]
-    sys.exit(stcli.main())
+    if runtime.exists():
+        pass
+    else:
+        sys.argv = ["streamlit", "run", sys.argv[0]]
+        sys.exit(stcli.main())    

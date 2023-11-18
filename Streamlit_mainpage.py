@@ -59,9 +59,11 @@ if btnFetchChannelName:
                 ss.b0_cnt = False
                 ss.b1_cnt = False
                 #st.rerun()
-                #runtime.exists()
-                sys.argv = ["streamlit", "run", sys.argv[0]]
-                sys.exit(stcli.main())
+                if runtime.exists():
+                    pass
+                else:
+                    sys.argv = ["streamlit", "run", sys.argv[0]]
+                    sys.exit(stcli.main())
             
             else:
                 pass
