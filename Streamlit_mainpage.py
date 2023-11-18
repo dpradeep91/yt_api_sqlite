@@ -2,6 +2,8 @@ import streamlit as st
 import time
 import YT_API as yt
 from streamlit import session_state as ss
+from streamlit import runtime
+
 
 st.markdown("# YouTube API Data Scraping")
 
@@ -51,11 +53,11 @@ if btnFetchChannelName:
                 with st.spinner('Saving...'):
                     yt.saveChannelInfo(channel_id)
                 st.success('Channel Details Saved Successfully')
-                time.sleep(4)
+                time.sleep(3)
                 ss.b0_cnt = False
                 ss.b1_cnt = False
-                st.rerun()
-                
+                #st.rerun()
+                runtime.exists()
             
             else:
                 pass
