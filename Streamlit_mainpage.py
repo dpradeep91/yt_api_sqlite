@@ -3,6 +3,8 @@ import time
 import YT_API as yt
 from streamlit import session_state as ss
 from streamlit import runtime
+from streamlit.web import cli as stcli
+import sys
 
 
 st.markdown("# YouTube API Data Scraping")
@@ -57,7 +59,9 @@ if btnFetchChannelName:
                 ss.b0_cnt = False
                 ss.b1_cnt = False
                 #st.rerun()
-                runtime.exists()
+                #runtime.exists()
+                sys.argv = ["streamlit", "run", sys.argv[0]]
+                sys.exit(stcli.main())
             
             else:
                 pass

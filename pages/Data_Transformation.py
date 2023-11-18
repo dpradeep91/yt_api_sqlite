@@ -3,6 +3,8 @@ import Mongo_tasks as mt
 import time
 from streamlit import session_state as ss
 from streamlit import runtime
+from streamlit.web import cli as stcli
+import sys
 
 st.markdown("# Transfer data to MySQL")
 
@@ -28,4 +30,6 @@ if ss.button_clicked:
     
     time.sleep(2)
     #st.rerun()
-    runtime.exists()
+    
+    sys.argv = ["streamlit", "run", sys.argv[0]]
+    sys.exit(stcli.main())
