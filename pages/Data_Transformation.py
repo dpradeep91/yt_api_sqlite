@@ -2,6 +2,7 @@ import streamlit as st
 import Mongo_tasks as mt
 import time
 from streamlit import session_state as ss
+from streamlit import runtime
 
 st.markdown("# Transfer data to MySQL")
 
@@ -26,4 +27,5 @@ if ss.button_clicked:
     st.success('Channel Details Saved in SQL Successfully')
     
     time.sleep(2)
-    st.rerun()
+    #st.rerun()
+    runtime.exists()
