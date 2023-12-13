@@ -13,6 +13,7 @@ def connection_string():
     except Exception as e:
         print("Exception while connecting to DB")
         print(e)
+        
         exit(1)
 
     #create_table(yb) # Run only first time and comment it 
